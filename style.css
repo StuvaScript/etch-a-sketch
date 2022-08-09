@@ -1,13 +1,21 @@
+:root {
+    --grid-size: 10;
+}
+
 #container {
     width: 960px;
-    height: 500px;
+    height: 960px;
     background: peachpuff;
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size), 1fr);
+    grid-template-rows: repeat(var(--grid-size), 1fr);
+    gap: 1rem;
 }
 
 .square {
     box-sizing: border-box;
-    border: solid black 2px;
-    width: 50px;
-    height: 50px;
+    /* border: solid black 2px; */
+    /* width: 50px;
+    height: 50px; */
     background: aquamarine;
 }

@@ -7,10 +7,12 @@
 // container.appendChild(square2);
 
 let buttz = document.createElement('div');
-for (let i = 1; i <= 6; i++) {
+for (let i = 0; i < 100; i++) {
     buttz[i] = document.createElement('div');
     buttz[i].classList.add('square');
     container.appendChild(buttz[i]);
     console.log(buttz[i] +' inside');
 }
 console.log(buttz + ' outside');
+
+document.documentElement.style.setProperty('--grid-size', 8);
