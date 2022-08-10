@@ -1,20 +1,18 @@
-// const square = document.createElement('div');
-// square.classList.add('square');
-// container.appendChild(square);
+let choice = 20;
 
-// const square2 = document.createElement('div');
-// square2.classList.add('square');
-// container.appendChild(square2);
+let grid = choice * choice;
 
-let grid = 40;
-
-let buttz = document.createElement('div');
+let square = document.createElement('div');
 for (let i = 0; i < grid; i++) {
-    buttz[i] = document.createElement('div');
-    buttz[i].classList.add('square');
-    container.appendChild(buttz[i]);
-    console.log(buttz[i] +' inside');
+    square[i] = document.createElement('div');
+    square[i].classList.add('square');
+    container.appendChild(square[i]);
+    console.log(square[i] +' inside');
 }
-console.log(buttz + ' outside');
+console.log(square + ' outside');
 
-// document.documentElement.style.setProperty('--grid-size', grid);
+// let main = document.querySelector('#container');
+// main.style.cssText = `grid-template-columns: repeat(${grid}, 1fr);
+// grid-template-rows: repeat(${grid}, 1fr);`;
+
+document.documentElement.style.setProperty('--grid-size', choice);
