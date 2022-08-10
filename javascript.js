@@ -1,4 +1,4 @@
-let choice = 100;
+let choice = 80;
 
 let grid = choice * choice;
 // let square;

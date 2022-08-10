@@ -4,8 +4,8 @@
 }
 
 #container {
-    width: 960px;
-    height: 960px;
+    width: 700px;
+    height: 700px;
     background: rgb(186, 130, 0);
     display: grid;
     grid-template-columns: repeat(var(--grid-size), 1fr);
