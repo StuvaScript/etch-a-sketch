@@ -1,6 +1,6 @@
 
 :root {
-    --grid-size: 10;
+    --grid-size: ;
 }
 
 #container {
@@ -15,8 +15,9 @@
 
 .square {
     box-sizing: border-box;
-    /* border: solid black 2px; */
-    /* width: 50px;
-    height: 50px; */
     background: aquamarine;
 }
+
+/* .square:hover {
+    background: rgb(219, 2, 219);
+} */
