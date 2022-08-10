@@ -6,8 +6,10 @@
 // square2.classList.add('square');
 // container.appendChild(square2);
 
+let grid = 40;
+
 let buttz = document.createElement('div');
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < grid; i++) {
     buttz[i] = document.createElement('div');
     buttz[i].classList.add('square');
     container.appendChild(buttz[i]);
@@ -15,4 +17,4 @@ for (let i = 0; i < 100; i++) {
 }
 console.log(buttz + ' outside');
 
-document.documentElement.style.setProperty('--grid-size', 8);
+// document.documentElement.style.setProperty('--grid-size', grid);

@@ -1,15 +1,16 @@
+
 :root {
-    --grid-size: 10;
+    --grid-size: 4;
 }
 
 #container {
     width: 960px;
     height: 960px;
-    background: peachpuff;
+    background: rgb(186, 130, 0);
     display: grid;
     grid-template-columns: repeat(var(--grid-size), 1fr);
     grid-template-rows: repeat(var(--grid-size), 1fr);
-    gap: 1rem;
+    gap: 2px;
 }
 
 .square {
