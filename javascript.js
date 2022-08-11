@@ -1,24 +1,36 @@
-let choice = 80;
+let choice;
 
-let grid = choice * choice;
-// let square;
-// let square = document.createElement('div');
-for (let i = 0; i < grid; i++) {
-    square = document.createElement('div');
-    square.classList.add('square');
-    container.appendChild(square);
-    console.log(square +' inside');
+baseArea();
+
+function baseArea() {
+    choice = 16;
 }
-console.log(square + ' outside');
 
-document.documentElement.style.setProperty('--grid-size', choice);
 
-let boink = document.querySelectorAll('.square');
-// console.log(boink);
-boink.forEach((boink) => {
-    // boink.style.setProperty('background', 'blue');
-    boink.addEventListener('mouseover', () => {
-        boink.style.setProperty('background', 'rgb(219, 2, 219)');
+
+createGrid();
+function createGrid() {
+    let grid = choice * choice;
+    document.documentElement.style.setProperty('--grid-size', choice);
+    for (let i = 0; i < grid; i++) {
+        square = document.createElement('div');
+        square.classList.add('square');
+        container.appendChild(square);
+    }
+}
+
+
+
+let changeSquare = document.querySelectorAll('.square');
+changeSquare.forEach((changeSquare) => {
+    changeSquare.addEventListener('mouseover', () => {
+        changeSquare.style.setProperty('background', 'rgb(219, 2, 219)');
     })
 })
 
+let btn = document.querySelector('#btn');
+btn.addEventListener('click', () => {
+    let answer = prompt('Choose grid size from 2 - 100', )
+    // choice = parseInt(answer);
+    createGrid(parseInt(answer));
+})
