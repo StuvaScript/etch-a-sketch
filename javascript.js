@@ -1,7 +1,6 @@
 
 let choice;
 
-
 // Starting grid size
 
 baseArea();
@@ -13,7 +12,7 @@ function baseArea() {
 
 createGrid();
 function createGrid() {
-    if (choice < 2 | choice > 100) return;
+    if (!(choice > 2 | choice < 100) | (choice < 2 | choice > 100)) return;
     if (document.querySelector('.square')) {
         let beGone = document.querySelectorAll('.square');
         beGone.forEach(beGone => {
