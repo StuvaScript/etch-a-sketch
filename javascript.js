@@ -1,30 +1,47 @@
 
 let choice;
-let grid;
+
+
+// Starting grid size
 
 baseArea();
 function baseArea() {
     choice = 16;
 }
 
+// Grid creator
+
 createGrid();
 function createGrid() {
+    if (choice < 2 | choice > 100) return;
     if (document.querySelector('.square')) {
         let beGone = document.querySelectorAll('.square');
-        beGone.forEach(square => {
-            square.remove();
+        beGone.forEach(beGone => {
+            beGone.remove();
         });
     }
-    grid = choice * choice;
+    let grid = choice * choice;
     document.documentElement.style.setProperty('--grid-size', choice);
     for (let i = 0; i < grid; i++) {
-        square = document.createElement('div');
+        let square = document.createElement('div');
         square.classList.add('square');
         container.appendChild(square);
     }
 }
 
+// Hover color changer
 
+colors();
+function colors() {
+    let changeSquare = document.querySelectorAll('.square');
+    changeSquare.forEach((changeSquare) => {
+        changeSquare.addEventListener('mouseover', () => {
+            changeSquare.style.setProperty('background', 'rgb(219, 2, 219)');
+        })
+    })
+}
+
+// Grid resizing button
 
 let btn = document.querySelector('#btn');
 btn.addEventListener('click', () => {
@@ -32,16 +49,5 @@ btn.addEventListener('click', () => {
     // choice = parseInt(answer);
     choice = parseInt(answer);
     createGrid();
+    colors();
 })
-
-
-
-
-
-let changeSquare = document.querySelectorAll('.square');
-changeSquare.forEach((changeSquare) => {
-    changeSquare.addEventListener('mouseover', () => {
-        changeSquare.style.setProperty('background', 'rgb(219, 2, 219)');
-    })
-})
-
