@@ -14,10 +14,6 @@
 }
 
 .square {
-    box-sizing: border-box;
     background: aquamarine;
+    filter: brightness(1);
 }
-
-/* .square:hover {
-    background: rgb(219, 2, 219);
-} */

@@ -12,7 +12,7 @@ function baseArea() {
 
 createGrid();
 function createGrid() {
-    if (!(choice > 2 | choice < 100) | (choice < 2 | choice > 100)) return;
+    if (!(choice > 2 || choice < 100) || (choice < 2 || choice > 100)) return;
     if (document.querySelector('.square')) {
         let beGone = document.querySelectorAll('.square');
         beGone.forEach(beGone => {
@@ -36,6 +36,7 @@ function colors() {
     changeSquare.forEach(changeSquare => {
         changeSquare.addEventListener('mouseover', () => {
             changeSquare.style.setProperty('background', randomColor());
+            changeSquare.style.setProperty('filter', `brightness(0.${changeLight(0)})`);
         })
     })
 }
@@ -47,12 +48,18 @@ function randomColor() {
     return `rgb(${r},${g},${b})`;
 }
 
+function changeLight(n) {
+    return () => {
+        n += 1;
+        return n;
+    }
+}
+
 // Grid resizing button
 
 let btn = document.querySelector('#btn');
 btn.addEventListener('click', () => {
     let answer = prompt('Choose a grid size from 2 - 100', )
-    // choice = parseInt(answer);
     choice = parseInt(answer);
     createGrid();
     colors();
