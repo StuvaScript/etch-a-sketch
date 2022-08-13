@@ -33,11 +33,18 @@ function createGrid() {
 colors();
 function colors() {
     let changeSquare = document.querySelectorAll('.square');
-    changeSquare.forEach((changeSquare) => {
+    changeSquare.forEach(changeSquare => {
         changeSquare.addEventListener('mouseover', () => {
-            changeSquare.style.setProperty('background', 'rgb(219, 2, 219)');
+            changeSquare.style.setProperty('background', randomColor());
         })
     })
+}
+
+function randomColor() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    return `rgb(${r},${g},${b})`;
 }
 
 // Grid resizing button

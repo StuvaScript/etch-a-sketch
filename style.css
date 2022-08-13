@@ -10,7 +10,7 @@
     display: grid;
     grid-template-columns: repeat(var(--grid-size), 1fr);
     grid-template-rows: repeat(var(--grid-size), 1fr);
-    gap: 2px;
+    gap: 1px;
 }
 
 .square {
