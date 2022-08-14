@@ -36,7 +36,7 @@ function colors() {
     changeSquare.forEach(changeSquare => {
         changeSquare.addEventListener('mouseover', () => {
             changeSquare.style.setProperty('background', randomColor());
-            changeSquare.style.setProperty('filter', `brightness(0.${changeLight(0)})`);
+            changeSquare.style.setProperty('filter', `brightness(${1})`);
         })
     })
 }
@@ -46,13 +46,6 @@ function randomColor() {
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
     return `rgb(${r},${g},${b})`;
-}
-
-function changeLight(n) {
-    return () => {
-        n += 1;
-        return n;
-    }
 }
 
 // Grid resizing button
