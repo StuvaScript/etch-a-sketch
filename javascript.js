@@ -34,19 +34,16 @@ colors();
 function colors() {
     let changeSquare = document.querySelectorAll('.square');
     changeSquare.forEach(changeSquare => {
-
         let lightNumber = 1;
-
+        
         changeSquare.addEventListener('mouseover', () => {
             changeSquare.style.setProperty('background', randomColor());
-            
             changeSquare.style.setProperty('filter', `brightness(${lightNumber})`);
             changeLight();
             function changeLight() {
                 if (lightNumber <= 0) return;
                 lightNumber = (lightNumber - 0.1).toFixed(1);
             }
-
         })
     })
 }
