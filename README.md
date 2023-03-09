@@ -1,3 +1,3 @@
-# etch-a-sketch
+I created an etch-a-sketch using HTML, CSS, and JavaScript, where each square changes color when you hover your mouse over it. I also implemented a shading feature where the squares become progressively darker each time they are hovered over. In addition, I added a feature to allow users to change the size of the grid, providing a more customizable user experience!
 
-In this project I'm going to create a grid that can be sized differently according to the user's input. When the mouse hovers over the squares they will change color.
+See the live project ar https://stuvascript.github.io/etch-a-sketch/
