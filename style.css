@@ -1,19 +1,82 @@
-
 :root {
-    --grid-size: ;
+  --grid-size: ;
+}
+
+* {
+  margin: 0;
+  bottom: 0;
+}
+
+body {
+  background: #55002a;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+h1 {
+  font-size: 5rem;
+  text-shadow: 2px 2px 2px #000;
+}
+
+.bounce {
+  position: relative;
+  bottom: 0px;
+  animation-name: bounce;
+  animation-duration: 0.5s;
+}
+
+@keyframes bounce {
+  0% {
+    bottom: 0px;
+  }
+  50% {
+    bottom: 10px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+
+#btn {
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  color: rgb(186, 130, 0);
+  background: aquamarine;
+}
+
+#btn:hover {
+  background: linear-gradient(aquamarine, rgb(91, 185, 154));
 }
 
 #container {
-    width: 700px;
-    height: 700px;
-    background: rgb(186, 130, 0);
-    display: grid;
-    grid-template-columns: repeat(var(--grid-size), 1fr);
-    grid-template-rows: repeat(var(--grid-size), 1fr);
-    gap: 1px;
+  width: 700px;
+  height: 700px;
+  background: rgb(186, 130, 0);
+  display: grid;
+  grid-template-columns: repeat(var(--grid-size), 1fr);
+  grid-template-rows: repeat(var(--grid-size), 1fr);
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 10vw;
+  }
+
+  #container {
+    width: 90vw;
+    height: 90vw;
+  }
 }
 
 .square {
-    background: aquamarine;
-    filter: brightness(1);
+  border: 1px solid rgb(186, 130, 0);
+  background: aquamarine;
+  filter: brightness(1);
 }

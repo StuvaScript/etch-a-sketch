@@ -48,12 +48,12 @@ function colors() {
 }
 
 function randomColor() {
-  let r = Math.floor(Math.random() * 256);
-  let g = Math.floor(Math.random() * 256);
-  let b = Math.floor(Math.random() * 256);
+  let r = Math.floor(Math.random() * 256) + 1;
+  let g = Math.floor(Math.random() * 256) + 1;
+  let b = Math.floor(Math.random() * 256) + 1;
   return `rgb(${r},${g},${b})`;
 }
-// hey
+
 // Grid resizing button
 
 let btn = document.querySelector("#btn");
@@ -63,3 +63,48 @@ btn.addEventListener("click", () => {
   createGrid();
   colors();
 });
+
+const header = document.querySelector("h1");
+const headerLength = header.innerText.length;
+
+wrapHeaderLetters();
+
+const newSpans = document.querySelectorAll("h1 > span");
+
+setInterval(() => {
+  const spanPicker = newSpans[randomNumber()];
+  spanPicker.style.color = `${randomColor()}`;
+  // if (spanPicker.getAttribute("class") === "bounce") {
+  //   spanPicker.removeAttribute("class");
+  // }
+  spanPicker.setAttribute("class", "bounce");
+  // setTimeout(spanPicker.removeAttribute("class"), 500);
+}, 750);
+
+//====================================================================
+
+// TRYING TO ADD AN 'ON-CHANGE' EVENT LISTENER TO THE SPANS SO THAT I CAN REMOVE THEIR CLASS AFTER IT GETS ADDED ON
+
+let changedSpans = document.querySelectorAll("h1 > span");
+console.log(changedSpans);
+
+changedSpans.forEach((span) =>
+  span.addEventListener("change", () => {
+    console.log("changed");
+  })
+);
+
+//====================================================================
+
+function wrapHeaderLetters() {
+  for (let i = 0; i < headerLength; i++) {
+    let span = document.createElement("span");
+    span.innerText = header.innerText[i];
+    header.appendChild(span);
+  }
+  header.firstChild.remove();
+}
+
+function randomNumber() {
+  return Math.floor(Math.random() * headerLength);
+}
