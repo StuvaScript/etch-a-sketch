@@ -22,10 +22,10 @@ function createGrid(): void {
       squareToRemove.remove();
     });
   }
-  let grid = choice * choice;
+  let grid: number = choice * choice;
   document.documentElement.style.setProperty("--grid-size", choice.toString());
   for (let i = 0; i < grid; i++) {
-    const square = document.createElement("div");
+    const square: HTMLDivElement = document.createElement("div");
     square.classList.add("square");
     container?.appendChild(square);
   }
@@ -38,9 +38,9 @@ function colors(): void {
   const changeSquare: Readonly<NodeListOf<HTMLDivElement>> =
     document.querySelectorAll(".square");
   changeSquare.forEach((changeSquare) => {
-    let lightNumber = 1;
+    let lightNumber: number = 1;
 
-    changeSquare.addEventListener("mouseover", () => {
+    changeSquare.addEventListener("mouseover", (): void => {
       changeSquare.style.setProperty("background", randomColor());
       changeSquare.style.setProperty("filter", `brightness(${lightNumber})`);
       changeLight();
@@ -55,15 +55,16 @@ function colors(): void {
 type RGB = `rgb(${number},${number},${number})`;
 
 function randomColor(): RGB {
-  const rando = () => Math.floor(Math.random() * 255) + 1;
+  const rando = (): number => Math.floor(Math.random() * 255) + 1;
 
   return `rgb(${rando()},${rando()},${rando()})`;
 }
 
 // ---- Grid resizing button ----
 
-btn.addEventListener("click", () => {
-  const answer = prompt("Choose a grid size from 2 - 100");
+btn.addEventListener("click", (): void => {
+  const answer: string | null = prompt("Choose a grid size from 2 - 100");
+  if (!answer) return;
   choice = Number(answer);
   createGrid();
   colors();
@@ -88,9 +89,9 @@ function wrapHeaderLetters(): void {
 const newSpans: NodeListOf<HTMLSpanElement> | undefined =
   document.querySelectorAll("h1 > span");
 
-setInterval(() => {
-  const index = randomNumber();
-  if (index == null) return;
+setInterval((): void => {
+  const index: number | undefined = randomNumber();
+  if (!index) return;
   const spanPicker: HTMLSpanElement | undefined = newSpans[index];
   if (spanPicker !== undefined) {
     spanPicker.style.color = `${randomColor()}`;
@@ -98,7 +99,7 @@ setInterval(() => {
   }
 }, 750);
 
-setInterval(() => {
+setInterval((): void => {
   newSpans.forEach((span) => {
     if (span.classList.value === "bounce") {
       span.removeAttribute("class");

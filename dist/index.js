@@ -46,6 +46,8 @@ function randomColor() {
 }
 btn.addEventListener("click", () => {
     const answer = prompt("Choose a grid size from 2 - 100");
+    if (!answer)
+        return;
     choice = Number(answer);
     createGrid();
     colors();
@@ -65,7 +67,7 @@ function wrapHeaderLetters() {
 const newSpans = document.querySelectorAll("h1 > span");
 setInterval(() => {
     const index = randomNumber();
-    if (index == null)
+    if (!index)
         return;
     const spanPicker = newSpans[index];
     if (spanPicker !== undefined) {
