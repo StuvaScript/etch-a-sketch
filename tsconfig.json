@@ -5,9 +5,9 @@
     "rootDir": "./src",
     "outDir": "./dist",
     "removeComments": true,
-    "noEmitOnError": true,
-    // "lib": ["esnext", "DOM", "DOM.Iterable"], <-- maybe turn this on
-    // "moduleResolution": "bundler",
+    // "noEmitOnError": true, // <-- maybe turn this on
+    "lib": ["esnext", "DOM", "DOM.Iterable"], // <-- maybe turn this on
+    // "moduleResolution": "bundler", // <-- maybe turn this on
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
@@ -42,7 +42,7 @@
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force"
-    // "skipLibCheck": true <-- maybe turn this on
+    "moduleDetection": "force",
+    "skipLibCheck": true // <-- maybe turn this on
   }
 }

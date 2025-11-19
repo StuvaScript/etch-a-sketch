@@ -1,13 +1,13 @@
-const container = document.querySelector("#container");
-const btn = document.querySelector("#btn");
-const header = document.querySelector("h1");
+const container: HTMLDivElement | null = document.querySelector("#container");
+const btn: HTMLButtonElement | null = document.querySelector("#btn");
+const header: HTMLHeadingElement | null = document.querySelector("h1");
 
 if (!container || !btn || !header) {
   throw new Error("Missing DOM elements");
 }
 
 // ---- Starting grid size ----
-let choice = 16;
+let choice: number = 16;
 
 // ---- Grid creator ----
 
@@ -40,7 +40,7 @@ function colors(): void {
   changeSquare.forEach((changeSquare) => {
     let lightNumber = 1;
 
-    changeSquare.addEventListener("mouseover", (e: MouseEvent) => {
+    changeSquare.addEventListener("mouseover", () => {
       changeSquare.style.setProperty("background", randomColor());
       changeSquare.style.setProperty("filter", `brightness(${lightNumber})`);
       changeLight();
@@ -71,30 +71,31 @@ btn.addEventListener("click", () => {
 
 // ---- Header colorize and bounce features ----
 
-const headerLength = header.innerText.length;
+const headerLength: number = header.innerText.length;
 wrapHeaderLetters();
 
 function wrapHeaderLetters(): void {
   if (headerLength && header) {
     for (let i = 0; i < headerLength; i++) {
-      const span = document.createElement("span");
-      span.innerText = header.innerText[i];
-
+      const span: HTMLSpanElement = document.createElement("span");
+      span.innerText = header.innerText.charAt(i);
       header.appendChild(span);
     }
     header.firstChild?.remove();
   }
 }
 
-const newSpans: NodeListOf<HTMLSpanElement> =
+const newSpans: NodeListOf<HTMLSpanElement> | undefined =
   document.querySelectorAll("h1 > span");
 
 setInterval(() => {
   const index = randomNumber();
   if (index == null) return;
-  const spanPicker = newSpans[index];
-  spanPicker.style.color = `${randomColor()}`;
-  spanPicker.setAttribute("class", "bounce");
+  const spanPicker: HTMLSpanElement | undefined = newSpans[index];
+  if (spanPicker !== undefined) {
+    spanPicker.style.color = `${randomColor()}`;
+    spanPicker.setAttribute("class", "bounce");
+  }
 }, 750);
 
 setInterval(() => {
